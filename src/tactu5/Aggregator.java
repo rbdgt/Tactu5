@@ -14,6 +14,7 @@ import java.lang.Cloneable.*;
  * 
  * 
  * @author Alessandro
+ * @editor RBDGT (www.rbdgt.be)
  *
  */
 
@@ -43,7 +44,7 @@ public class Aggregator {
 
   }
 
-  /** Add sequence with no offset declaired 
+  /** Add sequence with no offset declared 
    * 
    * 
    * @param s Sequence datatype
@@ -55,7 +56,7 @@ public class Aggregator {
 
   }
 
-  /** Add simple sequence to Aggregator container, it allows to define a time offset in millieconds.
+  /** Add simple sequence to Aggregator container, it allows to define a time offset in milliseconds.
    * 
    * 
    * @param s  Sequence datatype.
@@ -64,7 +65,7 @@ public class Aggregator {
 
   public void addSequence ( Sequence s, float offSet ) {
 
-    // trasform sequence in clustersequence 
+    // transform sequence in clustersequence 
 
     int seqLength = s.getSequenceLength ();
     ClusterSequence tempCSeq = new ClusterSequence();
@@ -84,7 +85,7 @@ public class Aggregator {
 
 
   }
-  /** Add ClusterSequence datatype to Agregator container.
+  /** Add ClusterSequence datatype to Aggregator container.
    * 
    * 
    * @param cs
@@ -94,7 +95,7 @@ public class Aggregator {
     addClusterSequence ( cs, 0.0f );
 
   }
-/** Add ClusterSequence to Aggregator container, it allows to define a time offset in millieconds.
+/** Add ClusterSequence to Aggregator container, it allows to define a time offset in milliseconds.
  * 
  * 
  * @param cs  ClusterSequence datatype
@@ -108,7 +109,7 @@ public class Aggregator {
 
     } 
     else {
-      // fill the score with first sequnce     
+      // fill the score with first sequence     
 
         for( int j=0; j<cs.getClusterNumber(); j++) {
 
@@ -183,10 +184,12 @@ public class Aggregator {
     
     return idSequenceCounter;
   }
+  
   int addAndStoreClusterSequence ( ClusterSequence cs) {
     //int id;
     return 1;
   }
+  
   int addAndStoreSequence ( Sequence s, float offSet) {
 
 
@@ -194,11 +197,13 @@ public class Aggregator {
     addSequence(s,offSet);
     return idSequenceCounter;
   }
+  
   int addAndStoreClusterSequence ( ClusterSequence cs, float offSet) {
     //int id;
     return 1;
   } 
-  /** Return the aggragated score, it's necessary to call this method to feed Tactu5 internal sequencer.
+  
+  /** Return the aggregated score, it's necessary to call this method to feed Tactu5 internal sequencer.
    * 
    * 
    * @return
@@ -209,13 +214,14 @@ public class Aggregator {
 
 
   }
+  
   /** Reset all.
    * 
    * 
    * 
    */
   public void resetAll () {
-
+	  //TODO Fix Method
     new Aggregator ();
 
   }
