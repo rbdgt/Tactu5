@@ -14,7 +14,7 @@ import processing.core.*;
  * 
  * 
  * @author Alessandro Capozzo  - www.abstract-codex.net - summer - autumn 2007
- *
+ * @author RBDGT (www.rbdgt.be)
  */
 
 public class Cluster implements Cloneable, T5Containers {
@@ -30,9 +30,8 @@ public class Cluster implements Cloneable, T5Containers {
 		  
 	    this.cluster=new Note[inseq.length];
 	    
-	    PApplet.arraycopy(inseq,cluster);
-	    
-	    
+	    PApplet.arrayCopy(inseq,cluster);
+   
 
 	  }
 	  // standard clone method
@@ -64,6 +63,7 @@ public class Cluster implements Cloneable, T5Containers {
 	  
 	  /** Add a note to the cluster.
 	   * 
+	   * 
 	   * */
 	  
 	  public void addNote (Note inote) {
@@ -73,14 +73,21 @@ public class Cluster implements Cloneable, T5Containers {
 	    setDuration();
 
 	  }
+	  
 	  /** Get the elements number of the cluster.
 	   * 
+	   * @return	int
 	   * */
 	  public int getClusterNumber() {
 
 	    return  cluster.length;  
 
 	  }
+	  
+	  /**
+	   * 
+	   * @return	int
+	   */
 	  public int getContainerNum() {
 
 	    return cluster.length;
