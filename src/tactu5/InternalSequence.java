@@ -1,13 +1,7 @@
 package tactu5;
 
 
-import processing.core.*;
-
-import java.lang.Cloneable.*;
-/*
- * TACTU5 by Alessandro Capozzo  
- * www.abstract-codex.net
- */
+import processing.core.PApplet;
 
 
 public class InternalSequence extends ClusterSequence implements Cloneable {

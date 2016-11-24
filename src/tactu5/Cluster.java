@@ -5,6 +5,7 @@ import processing.core.*;
 /*
  * TACTU5 by Alessandro Capozzo  
  * www.abstract-codex.net
+ * @editor RBDGT (www.rbdgt.be)
  */
 /**
  * Cluster class allows to create chord instances with Tactu5.
@@ -24,7 +25,8 @@ public class Cluster implements Cloneable, T5Containers {
 	    cluster=new Note[0];
 	    duration=0;
 	  }
-	 public Cluster (Note[] inseq) {
+
+	public Cluster (Note[] inseq) {
 		  
 	    this.cluster=new Note[inseq.length];
 	    

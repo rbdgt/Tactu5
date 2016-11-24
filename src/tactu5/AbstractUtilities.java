@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 /*
  * TACTU5 by Alessandro Capozzo  
  * www.abstract-codex.net
+ * @editor RBDGT (www.rbdgt.be)
  */
 
 public class AbstractUtilities {
