@@ -13,11 +13,10 @@ package tactu5;
  * utilize properly some advanced methods.
  *
  * @author Alessandro Capozzo - www.abstract-codex.net - summer - autumn 2007
- * @return the image at the specified URL
  * @see T5Notes
  * @see Sequence
  * @see Cluster
- * @editor RBDGT (www.rbdgt.be)
+ * author RBDGT (www.rbdgt.be)
  */
 
 public class Note implements Cloneable {
@@ -98,7 +97,7 @@ public class Note implements Cloneable {
 	/**
 	 * Invert the boolean value for identify a rest.
 	 * 
-	 * @return Nothing.
+	 *
 	 */
 	public void invertRest() {
 		isRest = !isRest;
@@ -116,7 +115,7 @@ public class Note implements Cloneable {
 	/**
 	 * Set the the frequency value in Hz.
 	 * 
-	 * @parameter float.
+	 * @param f float (Hz)
 	 */
 	public void setFrequency(float f) {
 		frequency = f;
@@ -125,7 +124,7 @@ public class Note implements Cloneable {
 	/**
 	 * Get the duration value in milliseconds.
 	 * 
-	 * @parameter float.
+	 * @return	float (milliseconds)
 	 */
 	public float getDuration() {
 		return duration;
@@ -134,7 +133,7 @@ public class Note implements Cloneable {
 	/**
 	 * Get the sustain value in milliseconds.
 	 * 
-	 * @return float
+	 * @return float (milliseconds)
 	 */
 	public float getSustain() {
 		return sustain;
@@ -143,7 +142,7 @@ public class Note implements Cloneable {
 	/**
 	 * Get the pan value.
 	 * 
-	 * @return float
+	 * @return float (0.0 - 1.0)
 	 */
 	public float getPan() {
 		return pan;
@@ -152,7 +151,7 @@ public class Note implements Cloneable {
 	/**
 	 * Get the velocity value.
 	 * 
-	 * @return float
+	 * @return float (0.0 - 1.0)
 	 */
 	public float getVelocity() {
 		return velocity;
@@ -162,7 +161,7 @@ public class Note implements Cloneable {
 	 * Get a comment. You could use a comment to assign some custom value to the
 	 * event.
 	 * 
-	 * @return String
+	 * @return String (comment)
 	 */
 	public String getComment() {
 		return comment;
@@ -172,7 +171,7 @@ public class Note implements Cloneable {
 	 * Get a channel number. You could use this value as a change channel
 	 * parameter.
 	 * 
-	 * @return int
+	 * @return int (channel)
 	 */
 	public int getChannel() {
 		return channel;
@@ -182,6 +181,8 @@ public class Note implements Cloneable {
 
 	/**
 	 * Set the duration value of an event.
+	 * 
+	 * @param	d 	(0.0 - 1.0);
 	 */
 
 	public void setDuration(float d) {
@@ -190,6 +191,8 @@ public class Note implements Cloneable {
 
 	/**
 	 * Set the sustain value of an event.
+	 * 
+	 * @param	s	(0.0 - 1.0)
 	 */
 	public void setSustain(float s) {
 		sustain = s;
@@ -197,6 +200,8 @@ public class Note implements Cloneable {
 
 	/**
 	 * Set the pan value of an event.
+	 * 
+	 * @param p	float (0.0 - 1.0)
 	 */
 	public void setPan(float p) {
 		pan = p;
@@ -204,6 +209,8 @@ public class Note implements Cloneable {
 
 	/**
 	 * Set the velocity value of an event.
+	 * 
+	 * @param v	float (0.0 - 1.0)
 	 */
 	public void setVelocity(float v) {
 		velocity = v;
@@ -212,6 +219,8 @@ public class Note implements Cloneable {
 	/**
 	 * Write a comment. You could use a comment to assign some custom value to
 	 * the event.
+	 * 
+	 * @param c string (comment)
 	 */
 	public void setComment(String c) {
 		comment = c;
@@ -221,7 +230,7 @@ public class Note implements Cloneable {
 	 * Set a channel number. You could use this value as a change channel
 	 * parameter.
 	 * 
-	 * @return int
+	 * @param ch int (channelnumber)
 	 */
 	public void setChannel(int ch) {
 		channel = ch;

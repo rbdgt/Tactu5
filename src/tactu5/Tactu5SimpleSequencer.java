@@ -43,7 +43,7 @@ public class Tactu5SimpleSequencer extends Thread {
 	// set loop mode
 	private boolean isThisLoop;
 	// it is true when a new sequence income
-	private boolean isNewSeq;
+	//private boolean isNewSeq;
 
 	// **********************************//
 	// checking for noteReceiver app method

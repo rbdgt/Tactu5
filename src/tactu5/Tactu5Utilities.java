@@ -206,7 +206,12 @@ public class Tactu5Utilities {
    /**
     * This method generates new sequences contents.
     * 
+    * @param	note	Note
+    * @param	mode	int[]
+    * @param	modeDegrees	int[]
+    * @param	s	Sequence
     * 
+    * @return	Sequence
     * 
     */
      public Sequence sequenceGenerator (Note note, int[] mode, int[] modeDegrees, Sequence s) {
@@ -225,8 +230,12 @@ public class Tactu5Utilities {
      /**
       * Harmonize sequences.
       * 
-      * 
-      * 
+      * @param	s	Sequence
+      * @param	mode	int[]
+      * @param	modeDegrees	int[]
+      * @param	c	ClusterSequence
+      *
+      * @return ClusterSequence
       */
    public ClusterSequence harmonizer (Sequence s, int[] mode, int[] modeDegrees, ClusterSequence c) {
            

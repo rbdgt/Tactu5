@@ -37,7 +37,7 @@ public class Sequence implements Cloneable, T5Containers {
 		for (int j = 0; j < inseq.length; j++) {
 			updateTime(inseq[j].getDuration());
 		}
-		PApplet.arraycopy(inseq, sequence);
+		PApplet.arrayCopy(inseq, sequence);
 	}
 
 	// standard clone method
@@ -76,8 +76,8 @@ public class Sequence implements Cloneable, T5Containers {
 	/**
 	 * Return the time in milliseconds of a specific elements of the internal
 	 * array.
-	 * 
-	 * @return float
+	 * @param	n	int (stepnumber)
+	 * @return float	(milliseconds)
 	 */
 	public float getTimeAtStep(int n) {
 		return relativeTime[n];
@@ -95,8 +95,10 @@ public class Sequence implements Cloneable, T5Containers {
 
 	// set the sequence durations to the values of an float array
 	/**
-	 * Set all the duration values of internal Note array. It's posible to pass
+	 * Set all the duration values of the internal Note array. It's possible to pass
 	 * a single float value or an array.
+	 * 
+	 * @param	inArray	float	
 	 * 
 	 */
 	public void setDuration(float[] inArray) {
@@ -122,7 +124,7 @@ public class Sequence implements Cloneable, T5Containers {
 	/**
 	 * Set all the sustain values of internal Note array.
 	 * 
-	 * 
+	 * 	@param inArray	float
 	 */
 	public void setSustain(float[] inArray) {
 		int tempSeqLength = sequence.length;
@@ -147,7 +149,7 @@ public class Sequence implements Cloneable, T5Containers {
 	/**
 	 * Set all the pan values of internal Note array.
 	 * 
-	 * 
+	 * @param inArray	float
 	 */
 	public void setPan(float[] inArray) {
 		int tempSeqLength = sequence.length;
@@ -172,7 +174,7 @@ public class Sequence implements Cloneable, T5Containers {
 	/**
 	 * Set all the velocity values of internal Note array.
 	 * 
-	 * 
+	 * @param inArray	float
 	 */
 	public void setVelocity(float[] inArray) {
 		int tempSeqLength = sequence.length;
@@ -197,7 +199,7 @@ public class Sequence implements Cloneable, T5Containers {
 	/**
 	 * Set all the frequency values of internal Note array.
 	 * 
-	 * 
+	 * @param inArray	float
 	 */
 	public void setFrequency(float[] inArray) {
 		int tempSeqLength = sequence.length;
@@ -222,7 +224,7 @@ public class Sequence implements Cloneable, T5Containers {
 	/**
 	 * Set all the channel values of internal Note array.
 	 * 
-	 * 
+	 * @param inArray	float
 	 */
 	public void setChannel(int[] inArray) {
 		int tempSeqLength = sequence.length;
@@ -270,14 +272,14 @@ public class Sequence implements Cloneable, T5Containers {
 		}
 	}
 
-	private void setFloatArray(float[] inArray) {
+	/*private void setFloatArray(float[] inArray) {
 		// TODO setFloatArray(float[] inArray)
-	}
+	}*/
 
 	/**
 	 * Return a float array with all velocity values in the sequence.
 	 * 
-	 * 
+	 * @return float[]
 	 */
 	public float[] getVelocity() {
 		int tempSeqLength = sequence.length;
@@ -288,7 +290,6 @@ public class Sequence implements Cloneable, T5Containers {
 		return tempFreqArray;
 	}
 
-	// return a float array with all pan values in the sequence
 	/**
 	 * Return a float array with all pan values in the sequence.
 	 * 

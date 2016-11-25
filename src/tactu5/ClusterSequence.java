@@ -10,7 +10,7 @@ import processing.core.PApplet;
  * 
  * 
  * @author Alessandro Capozzo - www.abstract-codex.net - summer - autumn 2007
- * @editor RBDGT (www.rbdgt.be)
+ * @author RBDGT (www.rbdgt.be)
  */
 public class ClusterSequence {
 
@@ -31,7 +31,7 @@ public class ClusterSequence {
 		for (int j = 0; j < inseq.length; j++) {
 			updateTime(inseq[j].getDuration());
 		}
-		PApplet.arraycopy(inseq, clustersequence);
+		PApplet.arrayCopy(inseq, clustersequence);
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class ClusterSequence {
 	/**
 	 * Return the the time in millisecond at the specified event.
 	 * 
-	 * @param n
+	 * @param n	int	stepnumber
 	 * @return float datatype, .
 	 */
 	public float getTimeAtStep(int n) {
@@ -111,9 +111,10 @@ public class ClusterSequence {
 	/**
 	 * Return the number of all cluster inside the sequence
 	 * 
-	 * @return
+	 * @return	int clustersequence length
 	 */
 	public int getClusterNumber() {
+		//TODO is this correct?
 		return clustersequence.length;
 	}
 

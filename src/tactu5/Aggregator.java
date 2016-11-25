@@ -1,26 +1,22 @@
 package tactu5;
 
 /**
- * Aggregator class generate objects to feed the sequencer. It's possible to
- * pass it Sequence and ClusterSequence datatype. You could create many
- * Aggregator objects and use them to change internal sequencer contents in real
- * time
+ * Aggregator class generates objects to feed the sequencer. It's possible to
+ * pass it Sequence and ClusterSequence objects. You could create many
+ * Aggregator objects and use them to change the internal sequencer contents in
+ * real time.
  * 
- * 
- * 
- * @author Alessandro
- * @editor RBDGT (www.rbdgt.be)
+ * @author Alessandro Capozzo
+ * @author RBDGT (www.rbdgt.be)
  *
  */
 
 // generate clusters sequences for the sequencer
 public class Aggregator {
-	// the container of all the stored sequence
-	private Sequence[] sequencesContainer;
-	// the container of all the stored sequence of clusters
-	private ClusterSequence[] clustersequencesContainer;
-	// the result of aggregation process
-	private InternalSequence score;
+	private Sequence[] sequencesContainer; // the container of all the stored sequence
+	private ClusterSequence[] clustersequencesContainer;	// the container of all the stored sequence of clusters
+	private InternalSequence score;	// the result of aggregation process
+
 	// unique id store
 	private int idSequenceCounter;
 	private int idClusterSequenceCounter;
@@ -36,25 +32,22 @@ public class Aggregator {
 	}
 
 	/**
-	 * Add sequence with no offset declared
+	 * Add a sequence with no offset declared.
 	 * 
+	 * @param s Sequence
 	 * 
-	 * @param s
-	 *            Sequence datatype
 	 */
 	public void addSequence(Sequence s) {
 		addSequence(s, 0.0f);
 	}
 
 	/**
-	 * Add simple sequence to Aggregator container, it allows to define a time
+	 * Add a sequence to Aggregator container, it allows to define a time
 	 * offset in milliseconds.
 	 * 
 	 * 
-	 * @param s
-	 *            Sequence datatype.
-	 * @param offSet
-	 *            float, milliseconds.
+	 * @param s Sequence
+	 * @param offSet float (milliseconds)
 	 */
 	public void addSequence(Sequence s, float offSet) {
 		// transform sequence in clustersequence
@@ -70,10 +63,10 @@ public class Aggregator {
 	}
 
 	/**
-	 * Add ClusterSequence datatype to Aggregator container.
+	 * Add ClusterSequence to Aggregator container.
 	 * 
 	 * 
-	 * @param cs
+	 * @param cs	Clustersequence
 	 */
 	public void addClusterSequence(ClusterSequence cs) {
 		addClusterSequence(cs, 0.0f);
@@ -84,10 +77,8 @@ public class Aggregator {
 	 * offset in milliseconds.
 	 * 
 	 * 
-	 * @param cs
-	 *            ClusterSequence datatype
-	 * @param offSet
-	 *            float, offset in milliseconds
+	 * @param cs	ClusterSequence
+	 * @param offSet	float (milliseconds)
 	 */
 	public void addClusterSequence(ClusterSequence cs, float offSet) {
 		// add sequence to the score
@@ -101,7 +92,11 @@ public class Aggregator {
 		}
 	}
 
-	// Add a clusters sequence to the score, starting from a offSet time
+	/** Add a ClusterSequence to the score, starting from a offSet time
+	 * 
+	 * @param cs	ClusterSequence
+	 * @param offSet	float (milliseconds)
+	 */
 	private void insertClusterSequence(ClusterSequence cs, float offSet) {
 		//
 		int scoreIndex = 0;
@@ -139,47 +134,65 @@ public class Aggregator {
 		}
 	}
 
+	/**
+	 * 
+	 * @param s	Sequence
+	 * @return	int
+	 */
 	int addAndStoreSequence(Sequence s) {
-
 		idSequenceCounter++;
-
 		addSequence(s, 0.0f);
-
 		return idSequenceCounter;
 	}
 
+	/**
+	 * 
+	 * @param cs ClusterSequence
+	 * @return	int
+	 */
 	int addAndStoreClusterSequence(ClusterSequence cs) {
+		//TODO Fix addAndStoreClusterSequence(ClusterSequence cs)!
 		// int id;
 		return 1;
 	}
 
+	/**
+	 * 
+	 * @param s	Sequence
+	 * @param offSet	float (milliseconds)
+	 * @return	int
+	 */
 	int addAndStoreSequence(Sequence s, float offSet) {
-
 		idSequenceCounter++;
 		addSequence(s, offSet);
 		return idSequenceCounter;
 	}
 
+	/**
+	 * 
+	 * @param cs	ClusterSequence
+	 * @param offSet	float (milliseconds)
+	 * @return	int
+	 */
 	int addAndStoreClusterSequence(ClusterSequence cs, float offSet) {
+		//TODO Fix addAndStoreClusterSequence(ClusterSequence cs, float offSet)!
 		// int id;
 		return 1;
 	}
 
 	/**
-	 * Return the aggregated score, it's necessary to call this method to feed
-	 * Tactu5 internal sequencer.
+	 * Returns the aggregated score.
+	 * It's necessary to call this method to feed the Tactu5 internal sequencer.
 	 * 
 	 * 
-	 * @return
+	 * @return	InternalSequence
 	 */
 	public InternalSequence getScore() {
-
 		return score;
-
 	}
 
 	/**
-	 * Reset all.
+	 * Reset the Aggregator-object.
 	 * 
 	 * 
 	 * 
